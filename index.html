@@ -37,7 +37,7 @@
   "operatingSystem": "iOS 17 or later",
   "url": "https://j-ktz.github.io/musicvideonight-site/",
   "installUrl": "https://apps.apple.com/app/id6811704618",
-  "description": "A party game for iPhone. Friends in the same room each pick one YouTube music video on a theme, watch them together in sync, react and chat live, veto a pick before it plays, then vote blind for a favorite. Works peer-to-peer over WiFi and Bluetooth with no accounts and no server. AirPlay the host's phone to an Apple TV for a big-screen TV mode while phones act as remotes.",
+  "description": "A party game for iPhone. Friends in the same room each pick one YouTube music video on a theme, watch them together in sync, react and chat live, veto a pick before it plays, then vote blind for a favorite. Works peer-to-peer over WiFi and Bluetooth with no accounts and no server. Works with an Apple TV: AirPlay the video, or mirror a big-screen scoreboard.",
   "screenshot": [
     "https://j-ktz.github.io/musicvideonight-site/img/screen-themes.webp",
     "https://j-ktz.github.io/musicvideonight-site/img/screen-playback.webp",
@@ -58,18 +58,18 @@
       "price": "4.99",
       "priceCurrency": "USD",
       "category": "In-app purchase",
-      "description": "One-time purchase, not a subscription. Unlocks all 20 built-in themes, custom themes you name and color, shareable recap cards, a recap video reel and the cross-Night Hall of Fame leaderboard. Only the host needs it."
+      "description": "One-time purchase, not a subscription. Unlocks all 20 built-in themes, custom themes you name and color, a recap video reel and the cross-Night Hall of Fame leaderboard. Only the host needs it."
     }
   ],
   "featureList": [
     "20 themed Nights, with custom themes hosts name and color themselves",
     "Everyone submits one YouTube music video that fits the theme",
-    "Synchronised playback for every phone in the room",
+    "Synchronized playback for every phone in the room",
     "Live chat and emoji reactions while the video plays",
     "Veto a pick before it plays",
     "Blind voting and an animated winner reveal",
-    "TV mode: AirPlay screen mirroring to an Apple TV for a big-screen layout while phones act as remotes",
-    "Shareable recap cards and a recap video reel",
+    "TV mode: AirPlay the video to an Apple TV, or mirror a big-screen scoreboard with chat and what's up next",
+    "A free shareable recap card of every Night, plus a recap video reel",
     "Hall of Fame leaderboard across every Night you play",
     "No accounts, no login, no server, no data collection — peer-to-peer over WiFi and Bluetooth"
   ],
@@ -100,12 +100,12 @@
     {
       "@type": "Question",
       "name": "How do you play it on a TV?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Start the Night, then open Control Center on the host's iPhone, tap Screen Mirroring and pick your Apple TV. Use Control Center, not the AirPlay button inside the video player. The TV then shows a big-screen layout built for television — the video, live reactions and the scores — while everyone's phone stays the remote control." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Two ways to use a TV: AirPlay the video from the player to put the video on the big screen, or use Screen Mirroring to put the scoreboard, chat and what's up next on the TV while the video plays on the host's phone. It's one or the other — iOS can't draw the chat on top of an AirPlayed video. Either way, everyone keeps their phone for chat, reactions, vetoes and voting." }
     },
     {
       "@type": "Question",
       "name": "Is Music Video Night free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Joining a Night is always free, and the app is free to download. Three themes are free for hosts too — Wildcard, Guilty Pleasures and One-Hit Wonders — along with your full Night history. One optional purchase, Unlock Everything at $4.99, adds every built-in theme, custom themes you name and color, shareable recap cards, a recap video reel and the Hall of Fame leaderboard. It is a one-time purchase, not a subscription, and only the host needs it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Joining a Night is always free, and the app is free to download. Three themes are free for hosts too — Wildcard, Guilty Pleasures and One-Hit Wonders — along with your full Night history. One optional purchase, Unlock Everything at $4.99, adds every built-in theme, custom themes you name and color, a recap video reel and the Hall of Fame leaderboard. Every host gets a shareable recap card of the Night for free. It is a one-time purchase, not a subscription, and only the host needs it." }
     },
     {
       "@type": "Question",
@@ -470,15 +470,15 @@
         <div>
           <p class="eyebrow">TV mode</p>
           <h2>Put it on the big screen</h2>
-          <p>AirPlay the host's iPhone to an Apple TV and the app stops mirroring and starts performing: a layout built for television, with the video big, the reactions flying past it and the scores down the side. Everyone's phone turns into a remote — picking, chatting, vetoing and voting from the sofa.</p>
+          <p>Two ways in, and you pick one. AirPlay the video from the player and it plays big on the TV. Or mirror the host's iPhone and the TV shows a layout built for the room — the scoreboard, the chat and what's up next — while the video plays on the host's phone. Either way, everyone keeps their own phone for picking, chatting, vetoing and voting.</p>
 
           <ul class="tv-steps">
             <li><span class="tick" aria-hidden="true">1</span><span>Start the Night on the host's iPhone.</span></li>
-            <li><span class="tick" aria-hidden="true">2</span><span>Open <b>Control Center</b> → <b>Screen Mirroring</b> → your Apple TV.</span></li>
-            <li><span class="tick" aria-hidden="true">3</span><span>The TV switches to the big-screen layout. Phones stay the remotes.</span></li>
+            <li><span class="tick" aria-hidden="true">2</span><span>For the video: tap the <b>AirPlay</b> button inside the player. For the scoreboard: <b>Control Center</b> → <b>Screen Mirroring</b>.</span></li>
+            <li><span class="tick" aria-hidden="true">3</span><span>Everyone keeps their phone for chat, reactions and the vote.</span></li>
           </ul>
 
-          <p class="tv-warn"><b>One catch worth knowing:</b> use Control Center, not the little AirPlay button inside the video player. The player's own button sends the video alone — Screen Mirroring is what hands the whole show to the TV.</p>
+          <p class="tv-warn"><b>One catch worth knowing:</b> it's the video <i>or</i> the scoreboard, not both. When a video goes to the TV, iOS hands the whole screen to it, so the chat and reactions can't be drawn on top. That's an Apple TV limit, not a setting you've missed.</p>
         </div>
 
         <div>
@@ -596,6 +596,7 @@
             <li><span>Submit, chat, react, veto and vote</span></li>
             <li><span>Host free Nights yourself on <b>Wildcard</b>, <b>Guilty Pleasures</b> and <b>One-Hit Wonders</b></span></li>
             <li><span>Your full <b>Night history</b>, saved on your phone</span></li>
+            <li><span>A shareable <b>recap card</b> of every Night</span></li>
           </ul>
         </div>
 
@@ -607,8 +608,7 @@
           <ul>
             <li><span>All <b>20 built-in themes</b></span></li>
             <li><span><b>Custom themes</b> you name and color yourself</span></li>
-            <li><span>Shareable <b>recap cards</b></span></li>
-            <li><span>A <b>recap video reel</b> of the Night</span></li>
+                        <li><span>A <b>recap video reel</b> of the Night</span></li>
             <li><span>The cross-Night <b>Hall of Fame</b> leaderboard</span></li>
           </ul>
         </div>
@@ -639,13 +639,13 @@
 
         <details>
           <summary><h3>How do we get it on the TV?</h3></summary>
-          <p class="answer">Start the Night, then open Control Center on the host's iPhone, tap Screen Mirroring and choose your Apple TV. The TV switches to the big-screen layout and every phone becomes a remote.</p>
+          <p class="answer">Two ways to use a TV: AirPlay the video from the player to put the video on the big screen, or use Screen Mirroring to put the scoreboard, chat and what's up next on the TV while the video plays on the host's phone. It's one or the other — iOS can't draw the chat on top of an AirPlayed video.</p>
           <p class="answer">Use Control Center rather than the AirPlay button inside the video player — the player's own button sends just the video, not the whole show.</p>
         </details>
 
         <details>
           <summary><h3>Is it free?</h3></summary>
-          <p class="answer">Joining is always free, and so is the app itself. Hosts get Wildcard, Guilty Pleasures and One-Hit Wonders free along with their whole Night history. One optional $4.99 purchase, Unlock Everything, adds every theme, custom themes, recap cards, the recap video reel and the Hall of Fame. It's one-time, not a subscription, and only the host needs it.</p>
+          <p class="answer">Joining is always free, and so is the app itself. Hosts get Wildcard, Guilty Pleasures and One-Hit Wonders free along with their whole Night history. One optional $4.99 purchase, Unlock Everything, adds every theme, custom themes, the recap video reel and the Hall of Fame. The recap card is free for everyone. It's one-time, not a subscription, and only the host needs it.</p>
         </details>
 
         <details>
