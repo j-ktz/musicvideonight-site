@@ -212,6 +212,15 @@
   .path b { color: var(--ink); }
   .path .code-inline { font-weight: 900; letter-spacing: .12em; }
 
+  /* Same chunky gradient button as 404.html's, so the site has one "do this" button. */
+  .openapp {
+    display: inline-block; padding: 14px 24px; border-radius: 20px; font-weight: 800; font-size: 17px;
+    text-decoration: none; color: var(--ink);
+    background: linear-gradient(115deg, var(--pink), var(--purple) 55%, var(--cyan));
+    box-shadow: var(--shadow-lift);
+  }
+  .openapp[hidden] { display: none; }
+
   .cta-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; margin-top: 28px; }
   /* App Store badge — drawn to Apple's "Download on the App Store" badge
      spec: black fill, thin #A6A6A6 keyline, white Apple logo, "Download on the"
@@ -263,9 +272,10 @@
       <p>Open the app, tap <b>Join with a Code</b> and type them in.</p>
     </div>
 
-    <!-- Two ways in. There is no "Open in the app" link: the app registers no
-         URL scheme or universal link yet, so a link could only open the App
-         Store. In Safari, the Smart App Banner's Open button does open it. -->
+    <!-- Two ways in. "Open in the app" uses the app's musicvideonight:// URL
+         scheme and is hidden until the script at the bottom turns it on — see
+         OPEN_IN_APP there for why it starts switched off. In Safari, the Smart
+         App Banner's Open button also hands the app this invite. -->
     <div class="getapp">
       <div class="path">
         <h2>Get Music Video Night</h2>
@@ -283,6 +293,7 @@
       <div class="path">
         <h2>Already have the app?</h2>
         <p>Open <b>Music Video Night</b>, tap <b>Join with a Code</b> and type in <b id="codeinline">the host's 5 letters</b>.</p>
+        <a class="openapp" id="openapp" href="#" hidden>Open in the app</a>
       </div>
     </div>
   </div>
@@ -387,6 +398,22 @@
   }
 
   document.title = "Join Night " + code + " — Music Video Night";
+
+  /* "Open in the app" — musicvideonight://join/CODE lands on Join with the code
+     filled in. OFF until the App Store version of the app handles that scheme:
+     version 1.0 doesn't, and on an iPhone without a handler Safari answers the
+     tap with an "address is invalid" alert, which is worse than no button.
+     Flip to true once the update that registers the scheme is live. */
+  var OPEN_IN_APP = false;
+  // iPadOS reports itself as a Mac, hence the touch check. The app is
+  // iPhone-only, but an iPad can run it too.
+  var isIOS = /iPhone|iPod|iPad/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (OPEN_IN_APP && isIOS) {
+    var open = document.getElementById("openapp");
+    open.href = "musicvideonight://join/" + code;
+    open.hidden = false;
+  }
 })();
 </script>
 </body>
