@@ -6,6 +6,7 @@
 <title>Page not found — Music Video Night</title>
 <meta name="description" content="That page doesn't exist. Head back to Music Video Night.">
 <meta name="theme-color" content="#FDF6EC">
+<meta name="apple-itunes-app" content="app-id=6811704618">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎬%3C/text%3E%3C/svg%3E">
 <style>
@@ -70,7 +71,7 @@
   if (i === -1 || !parts[i + 1]) return;
 
   var code = parts[i + 1].replace(/\.html?$/i, "").toUpperCase().replace(/[^A-Z]/g, "");
-  if (code.length < 4 || code.length > 8) return;
+  if (code.length !== 5) return;  // Night codes are always 5 letters
 
   // Keep whatever base path the site is served under (project page or apex domain).
   var base = "/" + parts.slice(0, i).join("/");
